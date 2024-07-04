@@ -1,12 +1,11 @@
 #include<iostream>
 using namespace std;
-void squareRoot(int x){
-    int start=0, end= x, mid , ans;
+long long int squareRoot(long long int x){
+    long long int start=0, end= x, mid , ans=0;
     while(start<=end){
         mid=(start + (end-start)/2 );
         if(mid*mid == x){
-            ans=mid;
-            break;
+            return mid;
         }
         else if(mid*mid < x){
             ans=mid;
@@ -16,12 +15,12 @@ void squareRoot(int x){
             end = mid-1;
         }
     } 
-    cout<<"root is: "<<ans;
+    return ans;
 }
 int main(){
     int x;
     cout<<"enter no:";
     cin>>x;
-    squareRoot(x);
+    cout<<squareRoot(x);
     return 0;
 }
