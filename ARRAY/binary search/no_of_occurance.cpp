@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-void occurance(int arr[100], int size, int target, int result[2]){
+int occurance(int arr[100], int size, int target){
     int start=0, end=size-1, first=-1, last=-1, mid;
 
     // first occurance 
@@ -17,7 +17,9 @@ void occurance(int arr[100], int size, int target, int result[2]){
             end = mid -1;
         }
     }
-
+    if(first==-1){
+        return 0;
+    }
 
 
     // last occurance
@@ -36,8 +38,7 @@ void occurance(int arr[100], int size, int target, int result[2]){
         }
     }
 
-    result[0]=first;
-    result[1]=last;
+    return (last-first)+1;
 
 }
 
@@ -51,7 +52,7 @@ int main(){
     cout<<"enter target:";
     cin>>target;
     int result[2];
-    occurance(a, n, target, result);
-    cout << "no of occurance : " << (result[1]-result[0] +1)<< endl;
+    
+    cout << "no of occurance : " << occurance(a, n, target)<< endl;
     return 0;
 }
