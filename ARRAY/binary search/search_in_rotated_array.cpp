@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
 int search(int arr[100],int size,int target){
-    int start=0,end=size-1,index=-1,mid;
+    int start=0,end=size-1,mid;
     while(start<=end){
         mid=start+(end-start)/2;
-        if(arr[0]==target){
+        if(arr[mid]==target){
             return mid;
         }
         // left sorted
@@ -32,7 +32,7 @@ int search(int arr[100],int size,int target){
             }
         }
     }
-    return index;
+    return -1;
 }
 
 int main(){
