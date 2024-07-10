@@ -11,7 +11,6 @@ int search(int arr[100],int size,int target){
         else if(arr[0]<arr[mid]){
             if(arr[0]<=target && target<=arr[mid]){
                 // left search
-                index=mid;
                 end=mid-1;
             }
             else{
@@ -23,7 +22,6 @@ int search(int arr[100],int size,int target){
             // right sorted
             if(arr[mid]<=target && target<=arr[size-1]){
                 // right search
-                index=mid;
                 start=mid+1;
             }
             else{
