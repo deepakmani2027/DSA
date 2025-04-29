@@ -45,7 +45,7 @@ int main(){
         cin>>arr[i];
     }
     cout<<"enter maximum difference between 2 element : ";
-    int suffix=arr[0];
+    int suffix=arr[n-1];
     int ans=INT_MIN;
     for(int i=n-1;i>=0;i--){
         suffix=max(suffix,arr[i]);
